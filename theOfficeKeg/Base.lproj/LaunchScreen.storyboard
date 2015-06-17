@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8076" systemVersion="14D121" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8063"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,28 +18,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2015 Vet&apos;s First Choice. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
-                                <rect key="frame" x="20" y="559" width="560" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-l7-dEP">
+                                <rect key="frame" x="20" y="0.0" width="2436" height="2412"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2015 Vet's First Choice. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
+                                <rect key="frame" x="20" y="559.5" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.89309853039999998" blue="0.28120779019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="theOfficeKeg" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="20" y="180" width="560" height="43"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sF5-o1-E6b">
+                                <rect key="frame" x="0.0" y="0.0" width="549" height="103"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
-                            <constraint firstAttribute="centerX" secondItem="GJd-Yh-RWb" secondAttribute="centerX" id="Q3B-4B-g5h"/>
-                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
-                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="bottom" multiplier="1/3" constant="1" id="moa-c2-u7t"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="x7j-FC-K8j"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="sF5-o1-E6b" secondAttribute="bottom" constant="687" id="5lm-FI-kcp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hmf-l7-dEP" secondAttribute="trailing" constant="-20" id="7dT-6D-0xq"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="hmf-l7-dEP" secondAttribute="bottom" id="ByN-Wp-MVE"/>
+                            <constraint firstItem="sF5-o1-E6b" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="14" id="Hk9-3c-dVB"/>
+                            <constraint firstItem="hmf-l7-dEP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="dns-SP-PdS"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="hmf-l7-dEP" secondAttribute="bottom" id="hjJ-LE-kNJ"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="sF5-o1-E6b" secondAttribute="bottom" constant="646.5" id="iBZ-cE-CZR"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="iiY-wu-Qk6"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="739.5" id="kpv-eI-uDW"/>
+                            <constraint firstItem="sF5-o1-E6b" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="mDL-Xl-PqU"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="mfF-s9-ki7"/>
+                            <constraint firstItem="hmf-l7-dEP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="miy-wy-GMV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sF5-o1-E6b" secondAttribute="trailing" constant="27" id="ptd-rM-V3p"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="uSZ-CM-ST9"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7dT-6D-0xq"/>
+                                <exclude reference="dns-SP-PdS"/>
+                                <exclude reference="miy-wy-GMV"/>
+                                <exclude reference="Hk9-3c-dVB"/>
+                                <exclude reference="mDL-Xl-PqU"/>
+                                <exclude reference="ptd-rM-V3p"/>
+                                <exclude reference="iBZ-cE-CZR"/>
+                                <exclude reference="kpv-eI-uDW"/>
+                                <exclude reference="mfF-s9-ki7"/>
+                                <exclude reference="uSZ-CM-ST9"/>
+                                <exclude reference="5lm-FI-kcp"/>
+                                <exclude reference="ByN-Wp-MVE"/>
+                                <exclude reference="hjJ-LE-kNJ"/>
+                                <exclude reference="iiY-wu-Qk6"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="7dT-6D-0xq"/>
+                                <include reference="dns-SP-PdS"/>
+                                <include reference="miy-wy-GMV"/>
+                                <include reference="Hk9-3c-dVB"/>
+                                <include reference="mDL-Xl-PqU"/>
+                                <include reference="ptd-rM-V3p"/>
+                                <include reference="iBZ-cE-CZR"/>
+                                <include reference="kpv-eI-uDW"/>
+                                <include reference="mfF-s9-ki7"/>
+                                <include reference="uSZ-CM-ST9"/>
+                                <include reference="5lm-FI-kcp"/>
+                                <include reference="ByN-Wp-MVE"/>
+                                <include reference="hjJ-LE-kNJ"/>
+                                <include reference="iiY-wu-Qk6"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -46,4 +91,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="2436" height="1810"/>
+        <image name="logo" width="549" height="103"/>
+    </resources>
 </document>

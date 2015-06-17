@@ -16,6 +16,12 @@
 		F41524C71B2E0409006416B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41524C51B2E0409006416B3 /* LaunchScreen.storyboard */; };
 		F41524D21B2E0409006416B3 /* theOfficeKegTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524D11B2E0409006416B3 /* theOfficeKegTests.swift */; };
 		F41524DD1B2E0409006416B3 /* theOfficeKegUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524DC1B2E0409006416B3 /* theOfficeKegUITests.swift */; };
+		F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
+		F4C6DDAE1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
+		F4C6DDAF1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
+		F4C6DDB11B312A3100E8CB63 /* PintPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */; };
+		F4C6DDB21B312A3100E8CB63 /* PintPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */; };
+		F4C6DDB31B312A3100E8CB63 /* PintPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,8 @@
 		F41524D81B2E0409006416B3 /* theOfficeKegUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = theOfficeKegUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41524DC1B2E0409006416B3 /* theOfficeKegUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theOfficeKegUITests.swift; sourceTree = "<group>"; };
 		F41524DE1B2E0409006416B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAPintButton.swift; sourceTree = "<group>"; };
+		F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PintPriceLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,8 @@
 				F41524C31B2E0409006416B3 /* Assets.xcassets */,
 				F41524C51B2E0409006416B3 /* LaunchScreen.storyboard */,
 				F41524C81B2E0409006416B3 /* Info.plist */,
+				F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */,
+				F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */,
 			);
 			path = theOfficeKeg;
 			sourceTree = "<group>";
@@ -264,7 +274,9 @@
 				F41524BB1B2E0409006416B3 /* RootViewController.swift in Sources */,
 				F41524BF1B2E0409006416B3 /* ModelController.swift in Sources */,
 				F41524BD1B2E0409006416B3 /* DataViewController.swift in Sources */,
+				F4C6DDB11B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
 				F41524B91B2E0409006416B3 /* AppDelegate.swift in Sources */,
+				F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C6DDB21B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
 				F41524D21B2E0409006416B3 /* theOfficeKegTests.swift in Sources */,
+				F4C6DDAE1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C6DDB31B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
 				F41524DD1B2E0409006416B3 /* theOfficeKegUITests.swift in Sources */,
+				F4C6DDAF1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,9 +423,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = theOfficeKeg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -418,9 +436,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = theOfficeKeg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -491,6 +511,7 @@
 				F41524E31B2E0409006416B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F41524E41B2E0409006416B3 /* Build configuration list for PBXNativeTarget "theOfficeKegTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +520,7 @@
 				F41524E61B2E0409006416B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F41524E71B2E0409006416B3 /* Build configuration list for PBXNativeTarget "theOfficeKegUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +529,7 @@
 				F41524E91B2E0409006416B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
