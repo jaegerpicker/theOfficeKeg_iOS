@@ -27,6 +27,11 @@
 		F40E29D31B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */; };
 		F40E29D41B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */; };
 		F40E29D51B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */; };
+		F40E29D61B54B13400EE6401 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41524C01B2E0409006416B3 /* Main.storyboard */; };
+		F40E29D71B54B13400EE6401 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41524C01B2E0409006416B3 /* Main.storyboard */; };
+		F40E29D91B54B15D00EE6401 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D81B54B15D00EE6401 /* LoginViewController.swift */; };
+		F40E29DA1B54B15D00EE6401 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D81B54B15D00EE6401 /* LoginViewController.swift */; };
+		F40E29DB1B54B15D00EE6401 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D81B54B15D00EE6401 /* LoginViewController.swift */; };
 		F41524B91B2E0409006416B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524B81B2E0409006416B3 /* AppDelegate.swift */; };
 		F41524BB1B2E0409006416B3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524BA1B2E0409006416B3 /* RootViewController.swift */; };
 		F41524BD1B2E0409006416B3 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524BC1B2E0409006416B3 /* DataViewController.swift */; };
@@ -85,6 +90,7 @@
 		F40E29CA1B534D8E00EE6401 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		F40E29CF1B534DFF00EE6401 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bridge.h; path = ../Bridge.h; sourceTree = "<group>"; };
 		F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+imageFromUrl.swift"; path = "../UIImageView+imageFromUrl.swift"; sourceTree = "<group>"; };
+		F40E29D81B54B15D00EE6401 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		F41524B51B2E0409006416B3 /* theOfficeKeg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theOfficeKeg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41524B81B2E0409006416B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F41524BA1B2E0409006416B3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 			children = (
 				F40E29CF1B534DFF00EE6401 /* Bridge.h */,
 				F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */,
+				F40E29D81B54B15D00EE6401 /* LoginViewController.swift */,
 				F41524B81B2E0409006416B3 /* AppDelegate.swift */,
 				F41524BA1B2E0409006416B3 /* RootViewController.swift */,
 				F41524BC1B2E0409006416B3 /* DataViewController.swift */,
@@ -329,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40E29D71B54B13400EE6401 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40E29D61B54B13400EE6401 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +414,7 @@
 				F41524B91B2E0409006416B3 /* AppDelegate.swift in Sources */,
 				F40E29C11B530A2E00EE6401 /* Role.swift in Sources */,
 				F40E29D31B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */,
+				F40E29D91B54B15D00EE6401 /* LoginViewController.swift in Sources */,
 				F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +431,7 @@
 				F4C6DDAE1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
 				F40E29C81B530A2E00EE6401 /* User.swift in Sources */,
 				F40E29B01B5307E100EE6401 /* Keg.swift in Sources */,
+				F40E29DA1B54B15D00EE6401 /* LoginViewController.swift in Sources */,
 				F40E29C21B530A2E00EE6401 /* Role.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +448,7 @@
 				F4C6DDAF1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
 				F40E29C91B530A2E00EE6401 /* User.swift in Sources */,
 				F40E29B11B5307E100EE6401 /* Keg.swift in Sources */,
+				F40E29DB1B54B15D00EE6401 /* LoginViewController.swift in Sources */,
 				F40E29C31B530A2E00EE6401 /* Role.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

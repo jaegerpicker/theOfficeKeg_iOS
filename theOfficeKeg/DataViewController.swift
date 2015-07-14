@@ -26,6 +26,8 @@ class DataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.imgAvatar.layer.cornerRadius = self.imgAvatar.frame.size.width / 2
+        self.imgAvatar.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

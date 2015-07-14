@@ -62,9 +62,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     
     func updateDataView() {
         if(dataRetrieved) {
-            dataView?.lblCurrentBeer.text = self.currentKeg.beer_name
-            dataView?.lblBrewer.text = self.currentKeg.brewery_name
-            dataView?.lblBeerPrice.displayText = "$" + self.currentKeg.pint_price!.stringValue
             let dateFormatter = NSDateFormatter()
             let theDateFormat = NSDateFormatterStyle.ShortStyle
             let theTimeFormat = NSDateFormatterStyle.ShortStyle
@@ -73,8 +70,19 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
             let beerTime = dateFormatter.stringFromDate(self.lastPurchase.created!) + ": "
             let user_name = (self.lastPurchase.user?.first_name)! + " " + (self.lastPurchase.user?.last_name)!
             let last_beer_string = beerTime + user_name + " enjoyed a beer"
-            dataView?.lblLastBeer.text = last_beer_string
-            dataView?.imgAvatar.imageFromUrl("https://www.gravatar.com/avatar/" + (self.lastPurchase.user?.email?.MD5())! + ".jpg?s=200&r=x&d=identicon")
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if self.dataView?.lblLastBeer.text == last_beer_string {
+                    self.dataView?.imgAvatar.imageFromUrl("https://www.gravatar.com/avatar/" +   (self.lastPurchase.user?.email?.MD5())! + ".jpg?s=200&r=x&d=identicon")
+                }
+                self.dataView?.lblLastBeer.text = last_beer_string
+                self.dataView?.lblCurrentBeer.text = self.currentKeg.beer_name
+                self.dataView?.lblBrewer.text = self.currentKeg.brewery_name
+                let price = self.currentKeg.pint_price
+                let nf = NSNumberFormatter()
+                nf.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+                let price_format = nf.stringFromNumber(price!)
+                self.dataView?.lblBeerPrice.displayText = price_format!
+            })
 
         }
     }
