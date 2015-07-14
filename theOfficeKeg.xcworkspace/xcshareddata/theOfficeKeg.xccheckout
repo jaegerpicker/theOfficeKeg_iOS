@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>73BCF9C9-1AA7-4077-AFD5-BB81214FFDCD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>theOfficeKeg</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>780211B75B0C4B8E414D9D093D5B25760EC86577</key>
+		<string>github.com:jaegerpicker/theOfficeKeg_iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>theOfficeKeg.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>780211B75B0C4B8E414D9D093D5B25760EC86577</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:jaegerpicker/theOfficeKeg_iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>780211B75B0C4B8E414D9D093D5B25760EC86577</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>780211B75B0C4B8E414D9D093D5B25760EC86577</string>
+			<key>IDESourceControlWCCName</key>
+			<string>theOfficeKeg</string>
+		</dict>
+	</array>
+</dict>
+</plist>

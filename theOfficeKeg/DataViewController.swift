@@ -10,8 +10,17 @@ import UIKit
 
 class DataViewController: UIViewController {
 
-    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var btnAccount: UIButton!
+    @IBOutlet weak var lblCurrentBeer: UILabel!
+    @IBOutlet weak var lblBrewer: UILabel!
+    @IBOutlet weak var btnBuy: UIButton!
+    @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var lblLastBeer: UILabel!
+    @IBOutlet weak var lblBeerPrice: PintPriceLabel!
     var dataObject: String = ""
+    var brewer: String = ""
+    var lastbeer: String = ""
 
 
     override func viewDidLoad() {

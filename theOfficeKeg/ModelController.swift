@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import CoreData
 /*
  A controller object that manages a simple model -- a collection of month names.
  
@@ -21,6 +22,12 @@ import UIKit
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
     var pageData: [String] = []
+    
+    var currentKeg: Keg = Keg()
+    var currentUser: User = User()
+    var lastPurchase: Purchase = Purchase()
+    var dataView: DataViewController? = nil
+    var dataRetrieved: Bool = false
 
 
     override init() {
@@ -28,6 +35,65 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         // Create the data model.
         let dateFormatter = NSDateFormatter()
         pageData = dateFormatter.monthSymbols
+        getCurrentKeg()
+    }
+    
+    func delay(delay: Double, closure:()->()){
+        dispatch_after(
+            dispatch_time(DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+                ),
+                dispatch_get_main_queue(), closure)
+    }
+    
+    func getCurrentKeg() {
+        Alamofire.request(.GET, URLString: "https://www.theofficekeg.com/kegs/active")
+            .responseJSON { (a, b, JSON, c) in
+                let keg_data = JSON as! NSDictionary
+                let data = keg_data.valueForKey("data") as! NSDictionary
+                print(data["beer_name"])
+                self.currentKeg.createFromNSDictionary(data)
+                self.getLastPurchase()
+                self.delay(5.0) {
+                    self.getCurrentKeg()
+                }
+        }
+    }
+    
+    func updateDataView() {
+        if(dataRetrieved) {
+            dataView?.lblCurrentBeer.text = self.currentKeg.beer_name
+            dataView?.lblBrewer.text = self.currentKeg.brewery_name
+            dataView?.lblBeerPrice.displayText = "$" + self.currentKeg.pint_price!.stringValue
+            let dateFormatter = NSDateFormatter()
+            let theDateFormat = NSDateFormatterStyle.ShortStyle
+            let theTimeFormat = NSDateFormatterStyle.ShortStyle
+            dateFormatter.dateStyle = theDateFormat
+            dateFormatter.timeStyle = theTimeFormat
+            let beerTime = dateFormatter.stringFromDate(self.lastPurchase.created!) + ": "
+            let user_name = (self.lastPurchase.user?.first_name)! + " " + (self.lastPurchase.user?.last_name)!
+            let last_beer_string = beerTime + user_name + " enjoyed a beer"
+            dataView?.lblLastBeer.text = last_beer_string
+            dataView?.imgAvatar.imageFromUrl("https://www.gravatar.com/avatar/" + (self.lastPurchase.user?.email?.MD5())! + ".jpg?s=200&r=x&d=identicon")
+
+        }
+    }
+    
+    func getLastPurchase() {
+        Alamofire.request(.GET, URLString: "https://www.theofficekeg.com/purchases/latest")
+            .responseJSON{ (response, request, JSON, error) in
+                print(error)
+                let purchase_data = JSON as! NSDictionary
+                let pdata = purchase_data.valueForKey("data") as! NSDictionary
+                print(pdata)
+                self.lastPurchase.createFromNSDictionary(pdata)
+                let p_user :User = User()
+                let p_user_dic = pdata["user"] as! NSDictionary
+                p_user.createFromNSDictionary(p_user_dic)
+                self.lastPurchase.user = p_user
+                self.dataRetrieved = true
+                self.updateDataView()
+        }
     }
 
     func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> DataViewController? {
@@ -38,6 +104,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as! DataViewController
+        dataView = dataViewController
         dataViewController.dataObject = self.pageData[index]
         return dataViewController
     }

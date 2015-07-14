@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522FE50BC25C4903D4568650 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EB644C4E69778178121161 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F40E29AF1B5307E100EE6401 /* Keg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29AB1B5307E100EE6401 /* Keg.swift */; };
+		F40E29B01B5307E100EE6401 /* Keg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29AB1B5307E100EE6401 /* Keg.swift */; };
+		F40E29B11B5307E100EE6401 /* Keg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29AB1B5307E100EE6401 /* Keg.swift */; };
+		F40E29BB1B530A2E00EE6401 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B31B530A2E00EE6401 /* Purchase.swift */; };
+		F40E29BC1B530A2E00EE6401 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B31B530A2E00EE6401 /* Purchase.swift */; };
+		F40E29BD1B530A2E00EE6401 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B31B530A2E00EE6401 /* Purchase.swift */; };
+		F40E29C11B530A2E00EE6401 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B51B530A2E00EE6401 /* Role.swift */; };
+		F40E29C21B530A2E00EE6401 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B51B530A2E00EE6401 /* Role.swift */; };
+		F40E29C31B530A2E00EE6401 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B51B530A2E00EE6401 /* Role.swift */; };
+		F40E29C71B530A2E00EE6401 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B71B530A2E00EE6401 /* User.swift */; };
+		F40E29C81B530A2E00EE6401 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B71B530A2E00EE6401 /* User.swift */; };
+		F40E29C91B530A2E00EE6401 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29B71B530A2E00EE6401 /* User.swift */; };
+		F40E29CB1B534D8E00EE6401 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29CA1B534D8E00EE6401 /* String+MD5.swift */; };
+		F40E29CC1B534D8E00EE6401 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29CA1B534D8E00EE6401 /* String+MD5.swift */; };
+		F40E29CD1B534D8E00EE6401 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29CA1B534D8E00EE6401 /* String+MD5.swift */; };
+		F40E29D11B53716200EE6401 /* Pods.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41EB644C4E69778178121161 /* Pods.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F40E29D31B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */; };
+		F40E29D41B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */; };
+		F40E29D51B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */; };
 		F41524B91B2E0409006416B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524B81B2E0409006416B3 /* AppDelegate.swift */; };
 		F41524BB1B2E0409006416B3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524BA1B2E0409006416B3 /* RootViewController.swift */; };
 		F41524BD1B2E0409006416B3 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524BC1B2E0409006416B3 /* DataViewController.swift */; };
@@ -41,7 +61,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F40E29D01B53714B00EE6401 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F40E29D11B53716200EE6401 /* Pods.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		41EB644C4E69778178121161 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		446743A508D57577EEC4E672 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		58A29529BD5AA56440368494 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F40E29AB1B5307E100EE6401 /* Keg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keg.swift; sourceTree = "<group>"; };
+		F40E29B31B530A2E00EE6401 /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		F40E29B51B530A2E00EE6401 /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		F40E29B71B530A2E00EE6401 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F40E29CA1B534D8E00EE6401 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
+		F40E29CF1B534DFF00EE6401 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bridge.h; path = ../Bridge.h; sourceTree = "<group>"; };
+		F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+imageFromUrl.swift"; path = "../UIImageView+imageFromUrl.swift"; sourceTree = "<group>"; };
 		F41524B51B2E0409006416B3 /* theOfficeKeg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theOfficeKeg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41524B81B2E0409006416B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F41524BA1B2E0409006416B3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522FE50BC25C4903D4568650 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +130,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		414F0CCC44537AD873B9F477 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				446743A508D57577EEC4E672 /* Pods.debug.xcconfig */,
+				58A29529BD5AA56440368494 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E70F8D6E990F59A12CF82C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41EB644C4E69778178121161 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F41524AC1B2E0409006416B3 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +154,8 @@
 				F41524D01B2E0409006416B3 /* theOfficeKegTests */,
 				F41524DB1B2E0409006416B3 /* theOfficeKegUITests */,
 				F41524B61B2E0409006416B3 /* Products */,
+				414F0CCC44537AD873B9F477 /* Pods */,
+				6E70F8D6E990F59A12CF82C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,16 +172,23 @@
 		F41524B71B2E0409006416B3 /* theOfficeKeg */ = {
 			isa = PBXGroup;
 			children = (
+				F40E29CF1B534DFF00EE6401 /* Bridge.h */,
+				F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */,
 				F41524B81B2E0409006416B3 /* AppDelegate.swift */,
 				F41524BA1B2E0409006416B3 /* RootViewController.swift */,
 				F41524BC1B2E0409006416B3 /* DataViewController.swift */,
 				F41524BE1B2E0409006416B3 /* ModelController.swift */,
+				F40E29CA1B534D8E00EE6401 /* String+MD5.swift */,
 				F41524C01B2E0409006416B3 /* Main.storyboard */,
 				F41524C31B2E0409006416B3 /* Assets.xcassets */,
 				F41524C51B2E0409006416B3 /* LaunchScreen.storyboard */,
 				F41524C81B2E0409006416B3 /* Info.plist */,
 				F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */,
 				F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */,
+				F40E29B31B530A2E00EE6401 /* Purchase.swift */,
+				F40E29B51B530A2E00EE6401 /* Role.swift */,
+				F40E29B71B530A2E00EE6401 /* User.swift */,
+				F40E29AB1B5307E100EE6401 /* Keg.swift */,
 			);
 			path = theOfficeKeg;
 			sourceTree = "<group>";
@@ -148,9 +218,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F41524E11B2E0409006416B3 /* Build configuration list for PBXNativeTarget "theOfficeKeg" */;
 			buildPhases = (
+				6A0A4D6F376507B1CC176F24 /* Check Pods Manifest.lock */,
 				F41524B11B2E0409006416B3 /* Sources */,
 				F41524B21B2E0409006416B3 /* Frameworks */,
 				F41524B31B2E0409006416B3 /* Resources */,
+				B21EA8A7651B0C3F5ECB6768 /* Embed Pods Frameworks */,
+				B7AC026AD0642612C52F94F2 /* Copy Pods Resources */,
+				F40E29D01B53714B00EE6401 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -203,6 +277,7 @@
 		F41524AD1B2E0409006416B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Vet's First Choice";
 				TargetAttributes = {
@@ -266,16 +341,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A0A4D6F376507B1CC176F24 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B21EA8A7651B0C3F5ECB6768 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7AC026AD0642612C52F94F2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F41524B11B2E0409006416B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40E29BB1B530A2E00EE6401 /* Purchase.swift in Sources */,
 				F41524BB1B2E0409006416B3 /* RootViewController.swift in Sources */,
+				F40E29CB1B534D8E00EE6401 /* String+MD5.swift in Sources */,
+				F40E29AF1B5307E100EE6401 /* Keg.swift in Sources */,
 				F41524BF1B2E0409006416B3 /* ModelController.swift in Sources */,
 				F41524BD1B2E0409006416B3 /* DataViewController.swift in Sources */,
 				F4C6DDB11B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
+				F40E29C71B530A2E00EE6401 /* User.swift in Sources */,
 				F41524B91B2E0409006416B3 /* AppDelegate.swift in Sources */,
+				F40E29C11B530A2E00EE6401 /* Role.swift in Sources */,
+				F40E29D31B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */,
 				F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,8 +414,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C6DDB21B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
+				F40E29D41B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */,
 				F41524D21B2E0409006416B3 /* theOfficeKegTests.swift in Sources */,
+				F40E29BC1B530A2E00EE6401 /* Purchase.swift in Sources */,
+				F40E29CC1B534D8E00EE6401 /* String+MD5.swift in Sources */,
 				F4C6DDAE1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
+				F40E29C81B530A2E00EE6401 /* User.swift in Sources */,
+				F40E29B01B5307E100EE6401 /* Keg.swift in Sources */,
+				F40E29C21B530A2E00EE6401 /* Role.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,8 +430,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C6DDB31B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
+				F40E29D51B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */,
 				F41524DD1B2E0409006416B3 /* theOfficeKegUITests.swift in Sources */,
+				F40E29BD1B530A2E00EE6401 /* Purchase.swift in Sources */,
+				F40E29CD1B534D8E00EE6401 /* String+MD5.swift in Sources */,
 				F4C6DDAF1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
+				F40E29C91B530A2E00EE6401 /* User.swift in Sources */,
+				F40E29B11B5307E100EE6401 /* Keg.swift in Sources */,
+				F40E29C31B530A2E00EE6401 /* Role.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +561,7 @@
 		};
 		F41524E21B2E0409006416B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 446743A508D57577EEC4E672 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = theOfficeKeg/Info.plist;
@@ -427,12 +569,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		F41524E31B2E0409006416B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58A29529BD5AA56440368494 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = theOfficeKeg/Info.plist;
@@ -440,6 +584,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

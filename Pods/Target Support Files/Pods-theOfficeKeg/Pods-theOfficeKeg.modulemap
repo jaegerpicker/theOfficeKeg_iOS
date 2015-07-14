@@ -1,0 +1,6 @@
+framework module Pods_theOfficeKeg {
+  umbrella header "Pods-theOfficeKeg-umbrella.h"
+
+  export *
+  module * { export * }
+}
