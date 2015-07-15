@@ -32,10 +32,11 @@
 		F40E29D91B54B15D00EE6401 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D81B54B15D00EE6401 /* LoginViewController.swift */; };
 		F40E29DA1B54B15D00EE6401 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D81B54B15D00EE6401 /* LoginViewController.swift */; };
 		F40E29DB1B54B15D00EE6401 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29D81B54B15D00EE6401 /* LoginViewController.swift */; };
+		F40E29DD1B55CF9700EE6401 /* OfficeKeg.png in Resources */ = {isa = PBXBuildFile; fileRef = F40E29DC1B55CF9700EE6401 /* OfficeKeg.png */; };
+		F40E29DE1B55CF9700EE6401 /* OfficeKeg.png in Resources */ = {isa = PBXBuildFile; fileRef = F40E29DC1B55CF9700EE6401 /* OfficeKeg.png */; };
+		F40E29DF1B55CF9700EE6401 /* OfficeKeg.png in Resources */ = {isa = PBXBuildFile; fileRef = F40E29DC1B55CF9700EE6401 /* OfficeKeg.png */; };
 		F41524B91B2E0409006416B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524B81B2E0409006416B3 /* AppDelegate.swift */; };
-		F41524BB1B2E0409006416B3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524BA1B2E0409006416B3 /* RootViewController.swift */; };
 		F41524BD1B2E0409006416B3 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524BC1B2E0409006416B3 /* DataViewController.swift */; };
-		F41524BF1B2E0409006416B3 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524BE1B2E0409006416B3 /* ModelController.swift */; };
 		F41524C21B2E0409006416B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41524C01B2E0409006416B3 /* Main.storyboard */; };
 		F41524C41B2E0409006416B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41524C31B2E0409006416B3 /* Assets.xcassets */; };
 		F41524C71B2E0409006416B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41524C51B2E0409006416B3 /* LaunchScreen.storyboard */; };
@@ -91,11 +92,10 @@
 		F40E29CF1B534DFF00EE6401 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bridge.h; path = ../Bridge.h; sourceTree = "<group>"; };
 		F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+imageFromUrl.swift"; path = "../UIImageView+imageFromUrl.swift"; sourceTree = "<group>"; };
 		F40E29D81B54B15D00EE6401 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		F40E29DC1B55CF9700EE6401 /* OfficeKeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OfficeKeg.png; path = Assets.xcassets/OfficeKeg.png; sourceTree = "<group>"; };
 		F41524B51B2E0409006416B3 /* theOfficeKeg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theOfficeKeg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41524B81B2E0409006416B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F41524BA1B2E0409006416B3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F41524BC1B2E0409006416B3 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		F41524BE1B2E0409006416B3 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		F41524C11B2E0409006416B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F41524C31B2E0409006416B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F41524C61B2E0409006416B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,12 +182,11 @@
 				F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */,
 				F40E29D81B54B15D00EE6401 /* LoginViewController.swift */,
 				F41524B81B2E0409006416B3 /* AppDelegate.swift */,
-				F41524BA1B2E0409006416B3 /* RootViewController.swift */,
 				F41524BC1B2E0409006416B3 /* DataViewController.swift */,
-				F41524BE1B2E0409006416B3 /* ModelController.swift */,
 				F40E29CA1B534D8E00EE6401 /* String+MD5.swift */,
 				F41524C01B2E0409006416B3 /* Main.storyboard */,
 				F41524C31B2E0409006416B3 /* Assets.xcassets */,
+				F40E29DC1B55CF9700EE6401 /* OfficeKeg.png */,
 				F41524C51B2E0409006416B3 /* LaunchScreen.storyboard */,
 				F41524C81B2E0409006416B3 /* Info.plist */,
 				F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */,
@@ -329,6 +328,7 @@
 				F41524C71B2E0409006416B3 /* LaunchScreen.storyboard in Resources */,
 				F41524C41B2E0409006416B3 /* Assets.xcassets in Resources */,
 				F41524C21B2E0409006416B3 /* Main.storyboard in Resources */,
+				F40E29DD1B55CF9700EE6401 /* OfficeKeg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40E29D71B54B13400EE6401 /* Main.storyboard in Resources */,
+				F40E29DE1B55CF9700EE6401 /* OfficeKeg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40E29D61B54B13400EE6401 /* Main.storyboard in Resources */,
+				F40E29DF1B55CF9700EE6401 /* OfficeKeg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,10 +406,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40E29BB1B530A2E00EE6401 /* Purchase.swift in Sources */,
-				F41524BB1B2E0409006416B3 /* RootViewController.swift in Sources */,
 				F40E29CB1B534D8E00EE6401 /* String+MD5.swift in Sources */,
 				F40E29AF1B5307E100EE6401 /* Keg.swift in Sources */,
-				F41524BF1B2E0409006416B3 /* ModelController.swift in Sources */,
 				F41524BD1B2E0409006416B3 /* DataViewController.swift in Sources */,
 				F4C6DDB11B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
 				F40E29C71B530A2E00EE6401 /* User.swift in Sources */,

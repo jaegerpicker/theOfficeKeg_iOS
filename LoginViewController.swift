@@ -9,23 +9,49 @@
 import UIKit
 import Foundation
 
+protocol LoginViewControllerDelegate{
+    func vcDidFinish(controller: LoginViewController, user: User)
+}
+
+
 class LoginViewController: UIViewController {
-    @IBOutlet var btnLogin: UIButton?
-    @IBOutlet var txtUsername: UITextField?
-    @IBOutlet var txtPassword: UITextField?
+    @IBOutlet var btnLogin: UIButton!
+    @IBOutlet var txtUsername: UITextField!
+    @IBOutlet var txtPassword: UITextField!
+    @IBOutlet var btnCancel: UIButton!
+    @IBOutlet var vwContainer: UIView!
+    var delegate: LoginViewControllerDelegate?
+    var logged_in_user: User?
     
-    @IBAction
-    func btnLoginTap() {
+    override func viewDidAppear(animated: Bool) {
+        vwContainer.layer.cornerRadius = 25
+        vwContainer.layer.masksToBounds = true
+    }
+    
+    @IBAction func btnLoginTap() {
         let request = NSURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/users/login")!)
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: config)
         
         let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
+            self.logged_in_user = User()
+            self.logged_in_user?.email = "logged_in_user@vetsfirstchoice.com"
+            if((self.delegate) != nil) {
+                self.delegate?.vcDidFinish(self, user: self.logged_in_user!)
+            }
         })!
         task.resume()
     }
     
-    override func viewDidLoad() {
-        
+    @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        print(subsequentVC)
+    }
+    
+    @IBAction func btnCancelTap() {
+        if((delegate) != nil) {
+            logged_in_user = User()
+            logged_in_user?.email = "not_logged_in_user@vetsfirstchoice.com"
+            delegate?.vcDidFinish(self, user: logged_in_user!)
+        }
     }
 }
