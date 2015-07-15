@@ -108,6 +108,12 @@
                                     <constraint firstAttribute="height" constant="58" id="vEM-6b-ggi"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-1T-fl2">
+                                <rect key="frame" x="453" y="531" width="108" height="30"/>
+                                <state key="normal" title="YourTab: $0.00">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="H4K-ec-VjE" firstAttribute="leading" secondItem="400-vO-G96" secondAttribute="leading" id="1ak-Gr-we8"/>
@@ -119,11 +125,13 @@
                             <constraint firstItem="RL0-dV-YTT" firstAttribute="top" secondItem="pBT-14-dbS" secondAttribute="bottom" constant="8" id="Fd3-rg-CKd"/>
                             <constraint firstItem="89f-KU-5zy" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" id="G6E-1A-6JY"/>
                             <constraint firstItem="400-vO-G96" firstAttribute="top" secondItem="PNz-Wp-7z5" secondAttribute="bottom" constant="46" id="GWm-md-VZq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xpX-1T-fl2" secondAttribute="trailing" constant="19" id="Ga5-tj-8p2"/>
                             <constraint firstItem="RL0-dV-YTT" firstAttribute="centerX" secondItem="pBT-14-dbS" secondAttribute="centerX" id="Gf4-d3-1uT"/>
                             <constraint firstItem="RL0-dV-YTT" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="39" id="HEM-G3-tSv"/>
                             <constraint firstItem="LLa-dF-pkX" firstAttribute="top" secondItem="ZwX-cT-FIQ" secondAttribute="topMargin" id="HZx-oI-R9p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="89f-KU-5zy" secondAttribute="trailing" constant="19" id="J65-qU-EAw"/>
                             <constraint firstItem="LLa-dF-pkX" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leadingMargin" constant="-20" id="J6K-gq-cUR"/>
+                            <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="xpX-1T-fl2" secondAttribute="bottom" constant="39" id="Je2-KE-Gsp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nqt-Qy-Leg" secondAttribute="trailing" constant="19" id="MjJ-qg-Ebn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GHD-Jf-h9M" secondAttribute="trailing" constant="38" id="N3M-bi-vGH"/>
                             <constraint firstItem="GHD-Jf-h9M" firstAttribute="leading" secondItem="dYz-8F-5ZU" secondAttribute="trailing" constant="8" id="QFr-jy-orq"/>
@@ -157,6 +165,7 @@
                         <outlet property="btnAccount" destination="nqt-Qy-Leg" id="0f1-ya-85t"/>
                         <outlet property="btnBuy" destination="400-vO-G96" id="3mR-Vw-oOX"/>
                         <outlet property="btnLogin" destination="89f-KU-5zy" id="gEx-zp-hpG"/>
+                        <outlet property="btnYourTab" destination="xpX-1T-fl2" id="8Bu-jy-bAe"/>
                         <outlet property="imgAvatar" destination="dYz-8F-5ZU" id="UU8-uv-SvR"/>
                         <outlet property="lblBeerPrice" destination="H4K-ec-VjE" id="fgI-uy-bup"/>
                         <outlet property="lblBrewer" destination="PNz-Wp-7z5" id="g7P-3W-Ush"/>

@@ -14,7 +14,7 @@ protocol LoginViewControllerDelegate{
 }
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet var btnLogin: UIButton!
     @IBOutlet var txtUsername: UITextField!
     @IBOutlet var txtPassword: UITextField!
@@ -29,18 +29,29 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnLoginTap() {
-        let request = NSURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/users/login")!)
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: config)
-        
-        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
-            self.logged_in_user = User()
-            self.logged_in_user?.email = "logged_in_user@vetsfirstchoice.com"
-            if((self.delegate) != nil) {
-                self.delegate?.vcDidFinish(self, user: self.logged_in_user!)
+        if txtPassword.text?.isEmpty == false && txtUsername.text?.isEmpty == false {
+            let request = NSURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/users/login")!)
+
+            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+            let session = NSURLSession(configuration: config)
+            
+            let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
+                self.logged_in_user = User()
+                self.logged_in_user?.email = "logged_in_user@vetsfirstchoice.com"
+                if((self.delegate) != nil) {
+                    self.delegate?.vcDidFinish(self, user: self.logged_in_user!)
+                }
+            })!
+            task.resume()
+        } else {
+            let a = UIAlertController(title: "Signin Error", message: "You must fill in Username and Password to Signin", preferredStyle: UIAlertControllerStyle.ActionSheet)
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             }
-        })!
-        task.resume()
+            a.addAction(OKAction)
+            self.presentViewController(a, animated: true) {
+                
+            }
+        }
     }
     
     @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {

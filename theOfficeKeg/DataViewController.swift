@@ -19,6 +19,7 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var lblLastBeer: UILabel!
     @IBOutlet weak var lblBeerPrice: PintPriceLabel!
+    @IBOutlet weak var btnYourTab: UIButton!
     var dataObject: String = ""
     var brewer: String = ""
     var lastbeer: String = ""
@@ -104,6 +105,8 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
         //self.btnBuy.backgroundColor = UIColor.blackColor()
         self.imgAvatar.layer.cornerRadius = self.imgAvatar.frame.size.width / 2
         self.imgAvatar.clipsToBounds = true
+        btnAccount.hidden = true
+        btnYourTab.hidden = true
         getCurrentKeg()
     }
 
