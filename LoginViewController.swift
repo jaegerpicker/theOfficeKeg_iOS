@@ -23,15 +23,24 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
     var delegate: LoginViewControllerDelegate?
     var logged_in_user: User?
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidLoad() {
         vwContainer.layer.cornerRadius = 25
         vwContainer.layer.masksToBounds = true
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+    }
+    
     @IBAction func btnLoginTap() {
         if txtPassword.text?.isEmpty == false && txtUsername.text?.isEmpty == false {
-            let request = NSURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/users/login")!)
-
+            let request = NSMutableURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/users/login")!)
+            request.HTTPMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let username = txtUsername.text
+            let password = txtPassword.text
+            let body = "{username:\"\(username)\", password:\"\(password)\"}"
+            request.HTTPBody = body.dataUsingEncoding(NSStringEncoding())
             let config = NSURLSessionConfiguration.defaultSessionConfiguration()
             let session = NSURLSession(configuration: config)
             
@@ -41,7 +50,7 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
                 if((self.delegate) != nil) {
                     self.delegate?.vcDidFinish(self, user: self.logged_in_user!)
                 }
-            })!
+            })
             task.resume()
         } else {
             let a = UIAlertController(title: "Signin Error", message: "You must fill in Username and Password to Signin", preferredStyle: UIAlertControllerStyle.ActionSheet)

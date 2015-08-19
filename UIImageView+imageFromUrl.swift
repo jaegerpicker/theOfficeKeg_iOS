@@ -25,7 +25,7 @@ extension UIImageView {
                 })
                 self.layoutIfNeeded()
                 
-            })!;
+            });
             task.resume()
         }
     }

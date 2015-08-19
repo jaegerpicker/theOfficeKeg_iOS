@@ -39,16 +39,14 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
     }
     
     func getCurrentKeg() {
-        Alamofire.request(.GET, URLString: "https://www.theofficekeg.com/kegs/active")
-            .responseJSON { (a, b, JSON, c) in
-                let keg_data = JSON as! NSDictionary
+        Alamofire.request(.GET, "https://www.theofficekeg.com/kegs/active")
+            .responseJSON { (a, b, JSON) in
+                let keg_data = JSON.value as! NSDictionary
                 let data = keg_data.valueForKey("data") as! NSDictionary
                 print(data["beer_name"])
                 self.currentKeg.createFromNSDictionary(data)
                 self.getLastPurchase()
-                self.delay(5.0) {
-                    self.getCurrentKeg()
-                }
+                self.getCurrentKeg()
         }
     }
     
@@ -80,10 +78,9 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
     }
     
     func getLastPurchase() {
-        Alamofire.request(.GET, URLString: "https://www.theofficekeg.com/purchases/latest")
-            .responseJSON{ (response, request, JSON, error) in
-                print(error)
-                let purchase_data = JSON as! NSDictionary
+        Alamofire.request(.GET, "https://www.theofficekeg.com/purchases/latest")
+            .responseJSON{ (response, request, JSON) in
+                let purchase_data = JSON.value as! NSDictionary
                 let pdata = purchase_data.valueForKey("data") as! NSDictionary
                 print(pdata)
                 self.lastPurchase.createFromNSDictionary(pdata)
