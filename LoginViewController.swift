@@ -39,18 +39,53 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             let username = txtUsername.text
             let password = txtPassword.text
-            let body = "{username:\"\(username)\", password:\"\(password)\"}"
+            let body = "{\"email\":\"\(username!)\", \"password\":\"\(password!)\"}"
             request.HTTPBody = body.dataUsingEncoding(NSStringEncoding())
             let config = NSURLSessionConfiguration.defaultSessionConfiguration()
             let session = NSURLSession(configuration: config)
             
-            let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
-                self.logged_in_user = User()
-                self.logged_in_user?.email = "logged_in_user@vetsfirstchoice.com"
-                if((self.delegate) != nil) {
-                    self.delegate?.vcDidFinish(self, user: self.logged_in_user!)
+            let task : NSURLSessionDataTask = session.dataTaskWithRequest(request) {(data, response, error) -> Void in
+                do {
+                    NSLog("data back: \(data)")
+                    NSLog("response: \(response)")
+                    let res_data : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+                    NSLog("data parsed: \(res_data)")
+                    if res_data["success"] as! Int > 0 {
+                        let login_result : NSDictionary = res_data["data"] as! NSDictionary
+                        self.logged_in_user = User()
+                        self.logged_in_user?.email = login_result["email"] as? String
+                        self.logged_in_user?.balance = login_result["balance"] as? Float
+                        let created_date = login_result["created"] as? NSDate
+                        self.logged_in_user?.created = created_date
+                        self.logged_in_user?.first_name = login_result["first_name"] as? String
+                        self.logged_in_user?.last_name = login_result["last_name"] as? String
+                        if((self.delegate) != nil) {
+                            self.delegate?.vcDidFinish(self, user: self.logged_in_user!)
+                        }
+                    } else {
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            let a = UIAlertController(title: "Signin Error", message: res_data["message"] as? String,   preferredStyle: UIAlertControllerStyle.ActionSheet)
+                            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                            }
+                            a.addAction(OKAction)
+                            self.presentViewController(a, animated: true){
+                            
+                            }
+                        })
+                    }
+                } catch let jsonError {
+                    NSLog("caught exception parse data: \(jsonError)")
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        let a = UIAlertController(title: "Signin Error", message: "\(jsonError)",   preferredStyle: UIAlertControllerStyle.ActionSheet)
+                        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        }
+                        a.addAction(OKAction)
+                        self.presentViewController(a, animated: true){
+                            
+                        }
+                    })
                 }
-            })
+            }
             task.resume()
         } else {
             let a = UIAlertController(title: "Signin Error", message: "You must fill in Username and Password to Signin", preferredStyle: UIAlertControllerStyle.ActionSheet)

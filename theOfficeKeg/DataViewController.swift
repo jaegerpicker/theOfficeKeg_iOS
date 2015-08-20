@@ -46,7 +46,9 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
                 print(data["beer_name"])
                 self.currentKeg.createFromNSDictionary(data)
                 self.getLastPurchase()
-                self.getCurrentKeg()
+                self.delay(5.0, closure: {
+                    self.getCurrentKeg()
+                })
         }
     }
     
@@ -124,9 +126,62 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
                 print("Back to Main view")
                 
             })
+            btnLogin.setTitle("Signout", forState: UIControlState.Normal)
         }
 //        controller.navigationController?.popViewControllerAnimated(true)
         //controller.parentViewController?.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "signin" {
+            if btnLogin.titleLabel!.text == "Signin" {
+                return true
+            } else {
+                let request = NSMutableURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/users/logout")!)
+                request.HTTPMethod = "GET"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+                let session = NSURLSession(configuration: config)
+                
+                let task : NSURLSessionDataTask = session.dataTaskWithRequest(request) {(data, response, error) -> Void in
+                    do {
+                        NSLog("data back: \(data)")
+                        NSLog("response: \(response)")
+                        let res_data : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+                        NSLog("data parsed: \(res_data)")
+                        if res_data["success"] as! Int > 0 {
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.currentUser = User()
+                                self.btnLogin.setTitle("Signin", forState: UIControlState.Normal)
+                            })
+                        } else {
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                let a = UIAlertController(title: "Signout Error", message: res_data["message"] as? String,   preferredStyle: UIAlertControllerStyle.ActionSheet)
+                                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                                }
+                                a.addAction(OKAction)
+                                self.presentViewController(a, animated: true){
+                                    
+                                }
+                            })
+                        }
+                    } catch let JSONErr {
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            let a = UIAlertController(title: "Signout Error", message: "\(JSONErr)",   preferredStyle: UIAlertControllerStyle.ActionSheet)
+                            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                            }
+                            a.addAction(OKAction)
+                            self.presentViewController(a, animated: true){
+                                
+                            }
+                        })
+                    }
+                }
+                task.resume()
+                return false
+            }
+        }
+        return true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
