@@ -23,6 +23,7 @@ class Keg {
         self.beer_name = values["beer_name"] as? String
         self.brewery_name = values["brewery_name"] as? String
         self.pint_price = values["pint_price"] as? Float
+			self.id = values["_id"] as? String
     }
 
 }

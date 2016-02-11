@@ -48,6 +48,9 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
                 do {
                     NSLog("data back: \(data)")
                     NSLog("response: \(response)")
+									let response2 = response as! NSHTTPURLResponse!
+									let cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(response2?.allHeaderFields as![String: String], forURL: (response?.URL)!)
+									NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(cookies, forURL: response2?.URL, mainDocumentURL: nil)
                     let res_data : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
                     NSLog("data parsed: \(res_data)")
                     if res_data["success"] as! Int > 0 {

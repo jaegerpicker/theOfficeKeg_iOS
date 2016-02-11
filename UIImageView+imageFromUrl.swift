@@ -18,8 +18,8 @@ extension UIImageView {
             let session = NSURLSession(configuration: config)
             
             let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
-                print(response)
-                print(error)
+                //print(response)
+                //print(error)
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.image = UIImage(data: data!)
                 })
