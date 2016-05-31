@@ -156,8 +156,14 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
 				
 			})
 			self.logged_in_user?.loggedIn = true
-			btnAccount.hidden = false
-			btnLogin.setTitle("Signout", forState: UIControlState.Normal)
+			dispatch_async(dispatch_get_main_queue(), { () -> Void in
+				self.btnAccount.hidden = false
+				self.btnAccount.layoutIfNeeded()
+				self.btnYourTab.hidden = false
+				self.btnYourTab.layoutIfNeeded()
+				self.btnYourTab.setTitle("\(self.logged_in_user?.balance)", forState: UIControlState.Normal)
+				self.btnLogin.setTitle("Signout", forState: UIControlState.Normal)
+			})
 		}
 	}
 	
@@ -182,6 +188,8 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
 							dispatch_async(dispatch_get_main_queue(), { () -> Void in
 								self.currentUser = User()
 								self.btnLogin.setTitle("Signin", forState: UIControlState.Normal)
+								self.btnYourTab.hidden = true
+								self.btnAccount.hidden = true
 							})
 						} else {
 							dispatch_async(dispatch_get_main_queue(), { () -> Void in

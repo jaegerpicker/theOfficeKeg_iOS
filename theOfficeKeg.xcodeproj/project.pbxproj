@@ -41,6 +41,8 @@
 		F41524D21B2E0409006416B3 /* theOfficeKegTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524D11B2E0409006416B3 /* theOfficeKegTests.swift */; };
 		F41524DD1B2E0409006416B3 /* theOfficeKegUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524DC1B2E0409006416B3 /* theOfficeKegUITests.swift */; };
 		F43BF5731CFD0AC600675726 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43BF5721CFD0AC600675726 /* Utils.swift */; };
+		F4B5989B1CFDE17A005558AD /* OverviewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B5989A1CFDE17A005558AD /* OverviewTabController.swift */; };
+		F4B5989D1CFDEB27005558AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */; };
 		F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
 		F4C6DDAE1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
 		F4C6DDAF1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
@@ -102,6 +104,8 @@
 		F41524DC1B2E0409006416B3 /* theOfficeKegUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theOfficeKegUITests.swift; sourceTree = "<group>"; };
 		F41524DE1B2E0409006416B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43BF5721CFD0AC600675726 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F4B5989A1CFDE17A005558AD /* OverviewTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewTabController.swift; sourceTree = "<group>"; };
+		F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAPintButton.swift; sourceTree = "<group>"; };
 		F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PintPriceLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +184,8 @@
 				F40E29B71B530A2E00EE6401 /* User.swift */,
 				F40E29AB1B5307E100EE6401 /* Keg.swift */,
 				F43BF5721CFD0AC600675726 /* Utils.swift */,
+				F4B5989A1CFDE17A005558AD /* OverviewTabController.swift */,
+				F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */,
 			);
 			path = theOfficeKeg;
 			sourceTree = "<group>";
@@ -344,6 +350,8 @@
 				F40E29CB1B534D8E00EE6401 /* String+MD5.swift in Sources */,
 				F40E29AF1B5307E100EE6401 /* Keg.swift in Sources */,
 				F41524BD1B2E0409006416B3 /* DataViewController.swift in Sources */,
+				F4B5989D1CFDEB27005558AD /* ProfileViewController.swift in Sources */,
+				F4B5989B1CFDE17A005558AD /* OverviewTabController.swift in Sources */,
 				F4C6DDB11B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
 				F40E29C71B530A2E00EE6401 /* User.swift in Sources */,
 				F41524B91B2E0409006416B3 /* AppDelegate.swift in Sources */,
