@@ -156,6 +156,7 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
 				
 			})
 			self.logged_in_user?.loggedIn = true
+			btnAccount.hidden = false
 			btnLogin.setTitle("Signout", forState: UIControlState.Normal)
 		}
 	}
@@ -184,24 +185,12 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
 							})
 						} else {
 							dispatch_async(dispatch_get_main_queue(), { () -> Void in
-								let a = UIAlertController(title: "Signout Error", message: res_data["message"] as? String,   preferredStyle: UIAlertControllerStyle.ActionSheet)
-								let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-								}
-								a.addAction(OKAction)
-								self.presentViewController(a, animated: true){
-									
-								}
+								displayMessage("Signout Error", message: (res_data["message"] as? String)!, preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "Ok", vc: self)
 							})
 						}
 					} catch let JSONErr {
 						dispatch_async(dispatch_get_main_queue(), { () -> Void in
-							let a = UIAlertController(title: "Signout Error", message: "\(JSONErr)",   preferredStyle: UIAlertControllerStyle.ActionSheet)
-							let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-							}
-							a.addAction(OKAction)
-							self.presentViewController(a, animated: true){
-								
-							}
+							displayMessage("Signout Error", message: "\(JSONErr)", preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "Ok", vc: self)
 						})
 					}
 				}
@@ -217,12 +206,9 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
 			let request = NSMutableURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/purchases/add")!)
 			request.HTTPMethod = "POST"
 			request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-			do {
-				let str = "{keg:\(currentKeg.id)}"
-				request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(str as AnyObject, options: [])
-			} catch let err  {
-				NSLog("\(err)")
-			}
+			let str = "{\"keg_id\":\"\(currentKeg.id!)\"}"
+			request.HTTPBody = str.dataUsingEncoding(NSStringEncoding())
+
 			let config = NSURLSessionConfiguration.defaultSessionConfiguration()
 			let session = NSURLSession(configuration: config)
 			
@@ -242,24 +228,12 @@ class DataViewController: UIViewController, LoginViewControllerDelegate {
 						})
 					} else {
 						dispatch_async(dispatch_get_main_queue(), { () -> Void in
-							let a = UIAlertController(title: "Buying Error", message: res_data["message"] as? String,   preferredStyle: UIAlertControllerStyle.ActionSheet)
-							let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-							}
-							a.addAction(OKAction)
-							self.presentViewController(a, animated: true){
-								
-							}
+							displayMessage("Buying Error", message: (res_data["message"] as? String)!, preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "OK", vc: self)
 						})
 					}
 				} catch let JSONErr {
 					dispatch_async(dispatch_get_main_queue(), { () -> Void in
-						let a = UIAlertController(title: "Buying Error", message: "\(JSONErr)",   preferredStyle: UIAlertControllerStyle.ActionSheet)
-						let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-						}
-						a.addAction(OKAction)
-						self.presentViewController(a, animated: true){
-							
-						}
+						displayMessage("Buying Error", message: "\(JSONErr)", preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "OK", vc: self)
 					})
 				}
 			}

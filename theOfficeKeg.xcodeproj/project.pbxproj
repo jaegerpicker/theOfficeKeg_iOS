@@ -40,6 +40,7 @@
 		F41524C71B2E0409006416B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41524C51B2E0409006416B3 /* LaunchScreen.storyboard */; };
 		F41524D21B2E0409006416B3 /* theOfficeKegTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524D11B2E0409006416B3 /* theOfficeKegTests.swift */; };
 		F41524DD1B2E0409006416B3 /* theOfficeKegUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524DC1B2E0409006416B3 /* theOfficeKegUITests.swift */; };
+		F43BF5731CFD0AC600675726 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43BF5721CFD0AC600675726 /* Utils.swift */; };
 		F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
 		F4C6DDAE1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
 		F4C6DDAF1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
@@ -100,6 +101,7 @@
 		F41524D81B2E0409006416B3 /* theOfficeKegUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = theOfficeKegUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41524DC1B2E0409006416B3 /* theOfficeKegUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theOfficeKegUITests.swift; sourceTree = "<group>"; };
 		F41524DE1B2E0409006416B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43BF5721CFD0AC600675726 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAPintButton.swift; sourceTree = "<group>"; };
 		F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PintPriceLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +179,7 @@
 				F40E29B51B530A2E00EE6401 /* Role.swift */,
 				F40E29B71B530A2E00EE6401 /* User.swift */,
 				F40E29AB1B5307E100EE6401 /* Keg.swift */,
+				F43BF5721CFD0AC600675726 /* Utils.swift */,
 			);
 			path = theOfficeKeg;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				F40E29D31B5377BF00EE6401 /* UIImageView+imageFromUrl.swift in Sources */,
 				F40E29D91B54B15D00EE6401 /* LoginViewController.swift in Sources */,
 				F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
+				F43BF5731CFD0AC600675726 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
