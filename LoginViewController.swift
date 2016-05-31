@@ -67,37 +67,19 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
                         }
                     } else {
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            let a = UIAlertController(title: "Signin Error", message: res_data["message"] as? String,   preferredStyle: UIAlertControllerStyle.ActionSheet)
-                            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                            }
-                            a.addAction(OKAction)
-                            self.presentViewController(a, animated: true){
-                            
-                            }
+							displayMessage("Signin Error", message: "\(res_data["message"])", preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "Ok", vc: self)
                         })
                     }
-                } catch let jsonError {
-                    NSLog("caught exception parse data: \(jsonError)")
+                } catch let JSONErr {
+                    NSLog("caught exception parse data: \(JSONErr)")
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let a = UIAlertController(title: "Signin Error", message: "\(jsonError)",   preferredStyle: UIAlertControllerStyle.ActionSheet)
-                        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                        }
-                        a.addAction(OKAction)
-                        self.presentViewController(a, animated: true){
-                            
-                        }
+						displayMessage("Signin Error", message: "\(JSONErr)", preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "Ok", vc: self)
                     })
                 }
             }
             task.resume()
         } else {
-            let a = UIAlertController(title: "Signin Error", message: "You must fill in Username and Password to Signin", preferredStyle: UIAlertControllerStyle.ActionSheet)
-            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-            }
-            a.addAction(OKAction)
-            self.presentViewController(a, animated: true) {
-                
-            }
+			displayMessage("Signin Error", message: "You must fill in Username and Password to Signin", preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "Ok", vc: self)
         }
     }
     
