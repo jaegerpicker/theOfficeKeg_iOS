@@ -43,6 +43,8 @@
 		F43BF5731CFD0AC600675726 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43BF5721CFD0AC600675726 /* Utils.swift */; };
 		F4B5989B1CFDE17A005558AD /* OverviewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B5989A1CFDE17A005558AD /* OverviewTabController.swift */; };
 		F4B5989D1CFDEB27005558AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */; };
+		F4B598A11CFE785B005558AD /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B598A01CFE785B005558AD /* Stripe.framework */; };
+		F4B598A31CFE7CBE005558AD /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B598A21CFE7CBE005558AD /* PaymentViewController.swift */; };
 		F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
 		F4C6DDAE1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
 		F4C6DDAF1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */; };
@@ -106,6 +108,9 @@
 		F43BF5721CFD0AC600675726 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F4B5989A1CFDE17A005558AD /* OverviewTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewTabController.swift; sourceTree = "<group>"; };
 		F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F4B5989E1CFDF340005558AD /* theOfficeKeg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = theOfficeKeg.entitlements; sourceTree = "<group>"; };
+		F4B598A01CFE785B005558AD /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
+		F4B598A21CFE7CBE005558AD /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAPintButton.swift; sourceTree = "<group>"; };
 		F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PintPriceLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B598A11CFE785B005558AD /* Stripe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +144,7 @@
 		6E70F8D6E990F59A12CF82C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4B598A01CFE785B005558AD /* Stripe.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 		F41524B71B2E0409006416B3 /* theOfficeKeg */ = {
 			isa = PBXGroup;
 			children = (
+				F4B5989E1CFDF340005558AD /* theOfficeKeg.entitlements */,
 				F40E29CF1B534DFF00EE6401 /* Bridge.h */,
 				F40E29D21B5377BF00EE6401 /* UIImageView+imageFromUrl.swift */,
 				F40E29D81B54B15D00EE6401 /* LoginViewController.swift */,
@@ -186,6 +194,7 @@
 				F43BF5721CFD0AC600675726 /* Utils.swift */,
 				F4B5989A1CFDE17A005558AD /* OverviewTabController.swift */,
 				F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */,
+				F4B598A21CFE7CBE005558AD /* PaymentViewController.swift */,
 			);
 			path = theOfficeKeg;
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 				F41524B21B2E0409006416B3 /* Frameworks */,
 				F41524B31B2E0409006416B3 /* Resources */,
 				F40E29D01B53714B00EE6401 /* CopyFiles */,
+				F4B5989F1CFE7781005558AD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -277,7 +287,18 @@
 				TargetAttributes = {
 					F41524B41B2E0409006416B3 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = VHWFV2V25Z;
+						DevelopmentTeam = 75KWKTJPSF;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.OMC = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					F41524CC1B2E0409006416B3 = {
 						CreatedOnToolsVersion = 7.0;
@@ -341,6 +362,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F4B5989F1CFE7781005558AD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Stripe.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F41524B11B2E0409006416B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -353,6 +391,7 @@
 				F4B5989D1CFDEB27005558AD /* ProfileViewController.swift in Sources */,
 				F4B5989B1CFDE17A005558AD /* OverviewTabController.swift in Sources */,
 				F4C6DDB11B312A3100E8CB63 /* PintPriceLabel.swift in Sources */,
+				F4B598A31CFE7CBE005558AD /* PaymentViewController.swift in Sources */,
 				F40E29C71B530A2E00EE6401 /* User.swift in Sources */,
 				F41524B91B2E0409006416B3 /* AppDelegate.swift in Sources */,
 				F40E29C11B530A2E00EE6401 /* Role.swift in Sources */,
@@ -519,12 +558,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = theOfficeKeg/theOfficeKeg.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = theOfficeKeg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codeartgames.theOfficeKeg;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -535,12 +579,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = theOfficeKeg/theOfficeKeg.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = theOfficeKeg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codeartgames.theOfficeKeg;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
