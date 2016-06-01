@@ -1,3 +1,7 @@
 Podfile.lock
 Pods
 theOfficeKeg.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+Cartfile.resolved
+*.bcsymbolmap
+*/Stripe.framework.dSYM/
+Carthage/Checkouts/
