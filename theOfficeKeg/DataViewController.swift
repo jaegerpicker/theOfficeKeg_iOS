@@ -162,7 +162,11 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 				self.btnAccount.layoutIfNeeded()
 				self.btnYourTab.hidden = false
 				self.btnYourTab.layoutIfNeeded()
-				self.btnYourTab.setTitle("\(self.logged_in_user?.balance)", forState: UIControlState.Normal)
+				if let tab = self.logged_in_user!.balance {
+					self.btnYourTab.setTitle("Your Tab: \(tab)", forState: UIControlState.Normal)
+				} else {
+					self.btnYourTab.setTitle("Your Tab: 0.0", forState: UIControlState.Normal)
+				}
 				self.btnLogin.setTitle("Signout", forState: UIControlState.Normal)
 			})
 		}
@@ -217,14 +221,13 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 				return
 			}
 			pay_request.paymentSummaryItems = [
-				PKPaymentSummaryItem(label: "\(currentKeg.beer_name) by \(currentKeg.brewery_name)", amount: NSDecimalNumber(decimal:currentKeg.pint_price!.decimalValue) )
+				PKPaymentSummaryItem(label: "\(currentKeg.beer_name!) by \(currentKeg.brewery_name!)", amount: NSDecimalNumber(decimal:currentKeg.pint_price!.decimalValue) )
 			]
 
 			if (Stripe.canSubmitPaymentRequest(pay_request)) {
 				let paymentController = PKPaymentAuthorizationViewController(paymentRequest: pay_request)
-				presentViewController(paymentController, animated: true, completion: { () -> Void in
-					self.serverBuy()
-				})
+				paymentController.delegate = self
+				self.presentViewController(paymentController, animated: true, completion: nil)
 			} else {
 				serverBuy()
 			}
@@ -248,13 +251,7 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 				let res_data : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
 				if res_data["success"] as! Int > 0 {
 					dispatch_async(dispatch_get_main_queue(), { () -> Void in
-						let a = UIAlertController(title: "Enjoy your beer!", message: res_data["message"] as? String,   preferredStyle: UIAlertControllerStyle.ActionSheet)
-						let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-						}
-						a.addAction(OKAction)
-						self.presentViewController(a, animated: true){
-
-						}
+						displayMessage("Enjoy your beer!", message: "\(res_data["message"])", preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "OK", vc: self)
 					})
 				} else {
 					dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -274,7 +271,11 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
 		if segue.identifier == "signin"{
 			let vc = segue.destinationViewController as! LoginViewController
-			vc.logged_in_user = self.logged_in_user
+			if let user = self.logged_in_user {
+				vc.logged_in_user = user
+			} else {
+				vc.logged_in_user = User()
+			}
 			vc.delegate = self
 			loginVC = vc
 		}
@@ -294,15 +295,14 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 				completion(PKPaymentAuthorizationStatus.Failure)
 				return
 			}
-			/*
-			We'll implement this below in "Sending the token to your server".
-			Notice that we're passing the completion block through.
-			See the above comment in didAuthorizePayment to learn why.
-			*/
 			self.createBackendChargeWithToken(token!, completion: completion)
 		}
 	}
 
+	/*
+	*
+	* This still needs to be implemented server side!
+	*/
 	func createBackendChargeWithToken(token: STPToken, completion: PKPaymentAuthorizationStatus -> ()) {
 		let url = NSURL(string: "https://theofficekeg.com/token")!
 		let request = NSMutableURLRequest(URL: url)
@@ -320,6 +320,10 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 			}
 		}
 		task.resume()
+	}
+
+	func paymentAuthorizationViewControllerWillAuthorizePayment(controller: PKPaymentAuthorizationViewController) {
+		print("Will auth")
 	}
 }
 

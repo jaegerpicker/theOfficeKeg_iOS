@@ -1,1 +1,2 @@
 github "stripe/stripe-ios"
+github "mxcl/PromiseKit" ~> 3.0
