@@ -5,4 +5,5 @@ Cartfile.resolved
 *.bcsymbolmap
 */Stripe.framework.dSYM/
 Carthage/Checkouts/
+Carthage/Build/*
 Carthage/Build/iOS/Stripe.framework.dSYM/
