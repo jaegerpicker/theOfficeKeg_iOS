@@ -43,12 +43,5 @@ class BuyAPintButton: UIButton {
         borderLayer.strokeColor = UIColor.whiteColor().CGColor
         borderLayer.lineWidth = 6
         self.layer.insertSublayer(borderLayer, atIndex: 0)
-        /*let shapeLayer = CAShapeLayer()
-        shapeLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: roundRectCornerRadius).CGPath
-        shapeLayer.fillColor = roundRectColor.CGColor
-        self.layer.insertSublayer(shapeLayer, atIndex:1)
-        self.roundedRectLayer = shapeLayer*/
-        
-        
     }
 }

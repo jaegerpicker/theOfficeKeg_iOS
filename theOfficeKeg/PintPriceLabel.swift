@@ -36,16 +36,6 @@ class PintPriceLabel: UILabel {
     private var roundedRectLayer: CAShapeLayer?
         
     private func layoutRoundedRect() {
-        /*if let existingLayer = roundedRectLayer {
-            existingLayer.removeFromSuperlayer()
-        }
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: roundRectCornerRadius).CGPath
-        shapeLayer.fillColor = roundRectColor.CGColor
-        self.layer.insertSublayer(shapeLayer, atIndex:0)
-        self.roundedRectLayer = shapeLayer
-        self.textColor = UIColor.whiteColor()
-        self.text = displayText*/
         self.text = displayText
         self.textAlignment = NSTextAlignment.Center
         self.backgroundColor = roundRectColor

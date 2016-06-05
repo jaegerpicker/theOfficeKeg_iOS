@@ -229,44 +229,11 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 				paymentController.delegate = self
 				self.presentViewController(paymentController, animated: true, completion: nil)
 			} else {
-				serverBuy()
+				serverBuy(self, keg_id: currentKeg.id!)
 			}
 
 		}
 	}
-	
-	func serverBuy() -> Void {
-		let request = NSMutableURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/purchases/add")!)
-		request.HTTPMethod = "POST"
-		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-		let str = "{\"keg_id\":\"\(currentKeg.id!)\"}"
-		request.HTTPBody = str.dataUsingEncoding(NSStringEncoding())
-
-		let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-		let session = NSURLSession(configuration: config)
-
-
-		let task : NSURLSessionDataTask = session.dataTaskWithRequest(request) {(data, response, error) -> Void in
-			do {
-				let res_data : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-				if res_data["success"] as! Int > 0 {
-					dispatch_async(dispatch_get_main_queue(), { () -> Void in
-						displayMessage("Enjoy your beer!", message: "\(res_data["message"])", preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "OK", vc: self)
-					})
-				} else {
-					dispatch_async(dispatch_get_main_queue(), { () -> Void in
-						displayMessage("Buying Error", message: (res_data["message"] as? String)!, preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "OK", vc: self)
-					})
-				}
-			} catch let JSONErr {
-				dispatch_async(dispatch_get_main_queue(), { () -> Void in
-					displayMessage("Buying Error", message: "\(JSONErr)", preferredStyle: UIAlertControllerStyle.ActionSheet, alertTitle: "OK", vc: self)
-				})
-			}
-		}
-		task.resume()
-	}
-
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
 		if segue.identifier == "signin"{

@@ -55,6 +55,15 @@
 		F4C6DDB11B312A3100E8CB63 /* PintPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */; };
 		F4C6DDB21B312A3100E8CB63 /* PintPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */; };
 		F4C6DDB31B312A3100E8CB63 /* PintPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */; };
+		F4D91A951D02964E004BCEF2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D91A931D02964E004BCEF2 /* Interface.storyboard */; };
+		F4D91A971D02964E004BCEF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D91A961D02964E004BCEF2 /* Assets.xcassets */; };
+		F4D91A9E1D02964E004BCEF2 /* theOfficeKegWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F4D91A9D1D02964E004BCEF2 /* theOfficeKegWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F4D91AA51D02964E004BCEF2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D91AA41D02964E004BCEF2 /* InterfaceController.swift */; };
+		F4D91AA71D02964E004BCEF2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D91AA61D02964E004BCEF2 /* ExtensionDelegate.swift */; };
+		F4D91AA91D02964E004BCEF2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D91AA81D02964E004BCEF2 /* NotificationController.swift */; };
+		F4D91AAD1D02964E004BCEF2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D91AAC1D02964E004BCEF2 /* ComplicationController.swift */; };
+		F4D91AAF1D02964E004BCEF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D91AAE1D02964E004BCEF2 /* Assets.xcassets */; };
+		F4D91AB31D02964E004BCEF2 /* theOfficeKegWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F4D91A911D02964E004BCEF2 /* theOfficeKegWatch.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +81,20 @@
 			remoteGlobalIDString = F41524B41B2E0409006416B3;
 			remoteInfo = theOfficeKeg;
 		};
+		F4D91A9F1D02964E004BCEF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F41524AD1B2E0409006416B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4D91A9C1D02964E004BCEF2;
+			remoteInfo = "theOfficeKegWatch Extension";
+		};
+		F4D91AB11D02964E004BCEF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F41524AD1B2E0409006416B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4D91A901D02964E004BCEF2;
+			remoteInfo = theOfficeKegWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +105,28 @@
 			dstSubfolderSpec = 10;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4D91AB91D02964F004BCEF2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F4D91A9E1D02964E004BCEF2 /* theOfficeKegWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4D91ABB1D02964F004BCEF2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F4D91AB31D02964E004BCEF2 /* theOfficeKegWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -122,6 +167,18 @@
 		F4B598AB1D0121CF005558AD /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = Carthage/Build/iOS/OMGHTTPURLRQ.framework; sourceTree = "<group>"; };
 		F4C6DDAC1B3124E800E8CB63 /* BuyAPintButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyAPintButton.swift; sourceTree = "<group>"; };
 		F4C6DDB01B312A3100E8CB63 /* PintPriceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PintPriceLabel.swift; sourceTree = "<group>"; };
+		F4D91A911D02964E004BCEF2 /* theOfficeKegWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theOfficeKegWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D91A941D02964E004BCEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F4D91A961D02964E004BCEF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4D91A981D02964E004BCEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4D91A9D1D02964E004BCEF2 /* theOfficeKegWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "theOfficeKegWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D91AA31D02964E004BCEF2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F4D91AA41D02964E004BCEF2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F4D91AA61D02964E004BCEF2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F4D91AA81D02964E004BCEF2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F4D91AAC1D02964E004BCEF2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		F4D91AAE1D02964E004BCEF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4D91AB01D02964E004BCEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +207,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4D91A9A1D02964E004BCEF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -171,6 +235,8 @@
 				F41524B71B2E0409006416B3 /* theOfficeKeg */,
 				F41524D01B2E0409006416B3 /* theOfficeKegTests */,
 				F41524DB1B2E0409006416B3 /* theOfficeKegUITests */,
+				F4D91A921D02964E004BCEF2 /* theOfficeKegWatch */,
+				F4D91AA11D02964E004BCEF2 /* theOfficeKegWatch Extension */,
 				F41524B61B2E0409006416B3 /* Products */,
 				6E70F8D6E990F59A12CF82C8 /* Frameworks */,
 			);
@@ -182,6 +248,8 @@
 				F41524B51B2E0409006416B3 /* theOfficeKeg.app */,
 				F41524CD1B2E0409006416B3 /* theOfficeKegTests.xctest */,
 				F41524D81B2E0409006416B3 /* theOfficeKegUITests.xctest */,
+				F4D91A911D02964E004BCEF2 /* theOfficeKegWatch.app */,
+				F4D91A9D1D02964E004BCEF2 /* theOfficeKegWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +302,38 @@
 			path = theOfficeKegUITests;
 			sourceTree = "<group>";
 		};
+		F4D91A921D02964E004BCEF2 /* theOfficeKegWatch */ = {
+			isa = PBXGroup;
+			children = (
+				F4D91A931D02964E004BCEF2 /* Interface.storyboard */,
+				F4D91A961D02964E004BCEF2 /* Assets.xcassets */,
+				F4D91A981D02964E004BCEF2 /* Info.plist */,
+			);
+			path = theOfficeKegWatch;
+			sourceTree = "<group>";
+		};
+		F4D91AA11D02964E004BCEF2 /* theOfficeKegWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F4D91AA41D02964E004BCEF2 /* InterfaceController.swift */,
+				F4D91AA61D02964E004BCEF2 /* ExtensionDelegate.swift */,
+				F4D91AA81D02964E004BCEF2 /* NotificationController.swift */,
+				F4D91AAC1D02964E004BCEF2 /* ComplicationController.swift */,
+				F4D91AAE1D02964E004BCEF2 /* Assets.xcassets */,
+				F4D91AB01D02964E004BCEF2 /* Info.plist */,
+				F4D91AA21D02964E004BCEF2 /* Supporting Files */,
+			);
+			path = "theOfficeKegWatch Extension";
+			sourceTree = "<group>";
+		};
+		F4D91AA21D02964E004BCEF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4D91AA31D02964E004BCEF2 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,10 +346,12 @@
 				F41524B31B2E0409006416B3 /* Resources */,
 				F40E29D01B53714B00EE6401 /* CopyFiles */,
 				F4B5989F1CFE7781005558AD /* ShellScript */,
+				F4D91ABB1D02964F004BCEF2 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F4D91AB21D02964E004BCEF2 /* PBXTargetDependency */,
 			);
 			name = theOfficeKeg;
 			productName = theOfficeKeg;
@@ -292,13 +394,47 @@
 			productReference = F41524D81B2E0409006416B3 /* theOfficeKegUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F4D91A901D02964E004BCEF2 /* theOfficeKegWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4D91ABA1D02964F004BCEF2 /* Build configuration list for PBXNativeTarget "theOfficeKegWatch" */;
+			buildPhases = (
+				F4D91A8F1D02964E004BCEF2 /* Resources */,
+				F4D91AB91D02964F004BCEF2 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4D91AA01D02964E004BCEF2 /* PBXTargetDependency */,
+			);
+			name = theOfficeKegWatch;
+			productName = theOfficeKegWatch;
+			productReference = F4D91A911D02964E004BCEF2 /* theOfficeKegWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F4D91A9C1D02964E004BCEF2 /* theOfficeKegWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4D91AB81D02964F004BCEF2 /* Build configuration list for PBXNativeTarget "theOfficeKegWatch Extension" */;
+			buildPhases = (
+				F4D91A991D02964E004BCEF2 /* Sources */,
+				F4D91A9A1D02964E004BCEF2 /* Frameworks */,
+				F4D91A9B1D02964E004BCEF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "theOfficeKegWatch Extension";
+			productName = "theOfficeKegWatch Extension";
+			productReference = F4D91A9D1D02964E004BCEF2 /* theOfficeKegWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F41524AD1B2E0409006416B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Vet's First Choice";
 				TargetAttributes = {
@@ -325,6 +461,13 @@
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = F41524B41B2E0409006416B3;
 					};
+					F4D91A901D02964E004BCEF2 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 75KWKTJPSF;
+					};
+					F4D91A9C1D02964E004BCEF2 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = F41524B01B2E0409006416B3 /* Build configuration list for PBXProject "theOfficeKeg" */;
@@ -343,6 +486,8 @@
 				F41524B41B2E0409006416B3 /* theOfficeKeg */,
 				F41524CC1B2E0409006416B3 /* theOfficeKegTests */,
 				F41524D71B2E0409006416B3 /* theOfficeKegUITests */,
+				F4D91A901D02964E004BCEF2 /* theOfficeKegWatch */,
+				F4D91A9C1D02964E004BCEF2 /* theOfficeKegWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -374,6 +519,23 @@
 			files = (
 				F40E29D61B54B13400EE6401 /* Main.storyboard in Resources */,
 				F40E29DF1B55CF9700EE6401 /* OfficeKeg.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4D91A8F1D02964E004BCEF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4D91A971D02964E004BCEF2 /* Assets.xcassets in Resources */,
+				F4D91A951D02964E004BCEF2 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4D91A9B1D02964E004BCEF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4D91AAF1D02964E004BCEF2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +617,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4D91A991D02964E004BCEF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4D91AA91D02964E004BCEF2 /* NotificationController.swift in Sources */,
+				F4D91AA71D02964E004BCEF2 /* ExtensionDelegate.swift in Sources */,
+				F4D91AAD1D02964E004BCEF2 /* ComplicationController.swift in Sources */,
+				F4D91AA51D02964E004BCEF2 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -467,6 +640,16 @@
 			isa = PBXTargetDependency;
 			target = F41524B41B2E0409006416B3 /* theOfficeKeg */;
 			targetProxy = F41524D91B2E0409006416B3 /* PBXContainerItemProxy */;
+		};
+		F4D91AA01D02964E004BCEF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4D91A9C1D02964E004BCEF2 /* theOfficeKegWatch Extension */;
+			targetProxy = F4D91A9F1D02964E004BCEF2 /* PBXContainerItemProxy */;
+		};
+		F4D91AB21D02964E004BCEF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4D91A901D02964E004BCEF2 /* theOfficeKegWatch */;
+			targetProxy = F4D91AB11D02964E004BCEF2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -485,6 +668,14 @@
 				F41524C61B2E0409006416B3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F4D91A931D02964E004BCEF2 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4D91A941D02964E004BCEF2 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -663,6 +854,74 @@
 			};
 			name = Release;
 		};
+		F4D91AB41D02964F004BCEF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = theOfficeKegWatch_Extension;
+				INFOPLIST_FILE = theOfficeKegWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		F4D91AB51D02964F004BCEF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = theOfficeKegWatch_Extension;
+				INFOPLIST_FILE = theOfficeKegWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		F4D91AB61D02964F004BCEF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "theOfficeKegWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		F4D91AB71D02964F004BCEF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "theOfficeKegWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKeg.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -698,6 +957,24 @@
 			buildConfigurations = (
 				F41524E81B2E0409006416B3 /* Debug */,
 				F41524E91B2E0409006416B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4D91AB81D02964F004BCEF2 /* Build configuration list for PBXNativeTarget "theOfficeKegWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4D91AB61D02964F004BCEF2 /* Debug */,
+				F4D91AB71D02964F004BCEF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4D91ABA1D02964F004BCEF2 /* Build configuration list for PBXNativeTarget "theOfficeKegWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4D91AB41D02964F004BCEF2 /* Debug */,
+				F4D91AB51D02964F004BCEF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
