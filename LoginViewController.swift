@@ -163,8 +163,6 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
 						return
 					case .TouchIDCancelled:
 						return
-					default:
-						break
 					}
 				}
 

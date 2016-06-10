@@ -13,6 +13,7 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 	
 	@IBOutlet var buyAPint: WKInterfaceButton!
+	var currentKeg: Keg = Keg()
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -31,7 +32,12 @@ class InterfaceController: WKInterfaceController {
     }
 
 	@IBAction func tapBuyAPint(sender: AnyObject) {
-		print("But A Pint")
+		print("Buy A Pint")
+		getCurrentKeg({(data) -> Void in
+			self.currentKeg.createFromNSDictionary(data)
+			print(self.currentKeg)
+			watchBuy(self.currentKeg.id!)
+		})
 	}
 
 }

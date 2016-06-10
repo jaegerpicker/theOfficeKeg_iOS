@@ -41,6 +41,9 @@
 		F41524D21B2E0409006416B3 /* theOfficeKegTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524D11B2E0409006416B3 /* theOfficeKegTests.swift */; };
 		F41524DD1B2E0409006416B3 /* theOfficeKegUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41524DC1B2E0409006416B3 /* theOfficeKegUITests.swift */; };
 		F43BF5731CFD0AC600675726 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43BF5721CFD0AC600675726 /* Utils.swift */; };
+		F4B180BD1D03F1D6002ACF82 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B180BC1D03F1D6002ACF82 /* API.swift */; };
+		F4B180BE1D03F1F8002ACF82 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B180BC1D03F1D6002ACF82 /* API.swift */; };
+		F4B180BF1D03F214002ACF82 /* Keg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E29AB1B5307E100EE6401 /* Keg.swift */; };
 		F4B5989B1CFDE17A005558AD /* OverviewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B5989A1CFDE17A005558AD /* OverviewTabController.swift */; };
 		F4B5989D1CFDEB27005558AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */; };
 		F4B598A11CFE785B005558AD /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B598A01CFE785B005558AD /* Stripe.framework */; };
@@ -155,6 +158,7 @@
 		F41524DC1B2E0409006416B3 /* theOfficeKegUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theOfficeKegUITests.swift; sourceTree = "<group>"; };
 		F41524DE1B2E0409006416B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43BF5721CFD0AC600675726 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F4B180BC1D03F1D6002ACF82 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F4B5989A1CFDE17A005558AD /* OverviewTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewTabController.swift; sourceTree = "<group>"; };
 		F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F4B5989E1CFDF340005558AD /* theOfficeKeg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = theOfficeKeg.entitlements; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				F4B5989C1CFDEB27005558AD /* ProfileViewController.swift */,
 				F4B598A21CFE7CBE005558AD /* PaymentViewController.swift */,
 				F4B598A81D012083005558AD /* TouchIDHelper.swift */,
+				F4B180BC1D03F1D6002ACF82 /* API.swift */,
 			);
 			path = theOfficeKeg;
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				F40E29D91B54B15D00EE6401 /* LoginViewController.swift in Sources */,
 				F4C6DDAD1B3124E800E8CB63 /* BuyAPintButton.swift in Sources */,
 				F4B598A91D012083005558AD /* TouchIDHelper.swift in Sources */,
+				F4B180BD1D03F1D6002ACF82 /* API.swift in Sources */,
 				F43BF5731CFD0AC600675726 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +631,8 @@
 				F4D91AA71D02964E004BCEF2 /* ExtensionDelegate.swift in Sources */,
 				F4D91AAD1D02964E004BCEF2 /* ComplicationController.swift in Sources */,
 				F4D91AA51D02964E004BCEF2 /* InterfaceController.swift in Sources */,
+				F4B180BE1D03F1F8002ACF82 /* API.swift in Sources */,
+				F4B180BF1D03F214002ACF82 /* Keg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

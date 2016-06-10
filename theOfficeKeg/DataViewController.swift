@@ -31,6 +31,7 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 	var lastPurchase: Purchase = Purchase()
 	var dataView: DataViewController? = nil
 	var dataRetrieved: Bool = false
+	var complete :((NSDictionary) -> Void)!
 	func delay(delay: Double, closure:()->()){
 		dispatch_after(
 			dispatch_time(DISPATCH_TIME_NOW,
@@ -39,34 +40,7 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 			dispatch_get_main_queue(), closure)
 	}
 	
-	func getCurrentKeg() {
-		let request = NSMutableURLRequest(URL: NSURL(string: "https://www.theofficekeg.com/kegs/active")!)
-		request.HTTPMethod = "GET"
-		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-		let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-		let session = NSURLSession(configuration: config)
 		
-		let task : NSURLSessionDataTask = session.dataTaskWithRequest(request) {(data, response, error) -> Void in
-			do {
-				let res_data : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-				if res_data["success"] as! Int > 0 {
-					let data = res_data.valueForKey("data") as! NSDictionary
-					//print(data["beer_name"])
-					self.currentKeg.createFromNSDictionary(data)
-					self.getLastPurchase()
-					self.delay(5.0, closure: {
-						self.getCurrentKeg()
-					})
-				} else {
-					NSLog(res_data["message"]as! String)
-				}
-			} catch let JSONErr {
-				NSLog("\(JSONErr)")
-			}
-		}
-		task.resume()
-	}
-	
 	func updateDataView() {
 		if(dataRetrieved) {
 			let dateFormatter = NSDateFormatter()
@@ -136,7 +110,14 @@ class DataViewController: UIViewController, LoginViewControllerDelegate, PKPayme
 		self.imgAvatar.clipsToBounds = true
 		btnAccount.hidden = true
 		btnYourTab.hidden = true
-		getCurrentKeg()
+		complete = ({(data: NSDictionary) -> Void in
+			self.currentKeg.createFromNSDictionary(data)
+			self.getLastPurchase()
+			self.delay(5.0, closure: {
+				getCurrentKeg(self.complete)
+			})
+		})
+		getCurrentKeg(complete)
 	}
 	
 	override func didReceiveMemoryWarning() {
