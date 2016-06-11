@@ -18,16 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-l7-dEP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-l7-dEP">
                                 <rect key="frame" x="20" y="0.0" width="2436" height="2412"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2412" id="hQU-g6-jE9"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="  Copyright © 2015 Vet's First Choice. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2015 Vet's First Choice. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
                                 <rect key="frame" x="20" y="560" width="560" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ESf-Qg-why"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.89309853039999998" blue="0.28120779019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sF5-o1-E6b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sF5-o1-E6b">
                                 <rect key="frame" x="0.0" y="0.0" width="549" height="103"/>
                             </imageView>
                         </subviews>
@@ -35,9 +41,15 @@
                         <constraints>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="sF5-o1-E6b" secondAttribute="bottom" constant="687" id="5lm-FI-kcp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hmf-l7-dEP" secondAttribute="trailing" constant="-20" id="7dT-6D-0xq"/>
+                            <constraint firstItem="hmf-l7-dEP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="9Lh-jP-2Db"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="hmf-l7-dEP" secondAttribute="bottom" id="ByN-Wp-MVE"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="Hcq-fE-Em5"/>
                             <constraint firstItem="sF5-o1-E6b" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="14" id="Hk9-3c-dVB"/>
+                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" symbolic="YES" id="Mbf-uO-BeP"/>
+                            <constraint firstItem="hmf-l7-dEP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="RDE-M3-kT7"/>
                             <constraint firstItem="hmf-l7-dEP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="dns-SP-PdS"/>
+                            <constraint firstItem="hmf-l7-dEP" firstAttribute="leading" secondItem="obG-Y5-kRd" secondAttribute="leading" id="fq8-6H-Yog"/>
+                            <constraint firstItem="hmf-l7-dEP" firstAttribute="top" secondItem="sF5-o1-E6b" secondAttribute="top" id="hWE-Wh-Gwf"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="hmf-l7-dEP" secondAttribute="bottom" id="hjJ-LE-kNJ"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="sF5-o1-E6b" secondAttribute="bottom" constant="646.5" id="iBZ-cE-CZR"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="iiY-wu-Qk6"/>
@@ -46,6 +58,7 @@
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="mfF-s9-ki7"/>
                             <constraint firstItem="hmf-l7-dEP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="miy-wy-GMV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sF5-o1-E6b" secondAttribute="trailing" constant="27" id="ptd-rM-V3p"/>
+                            <constraint firstItem="sF5-o1-E6b" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="q2Z-e9-LGO"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="uSZ-CM-ST9"/>
                         </constraints>
                         <variation key="default">
