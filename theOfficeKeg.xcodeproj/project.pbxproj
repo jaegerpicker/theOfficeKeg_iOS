@@ -91,13 +91,6 @@
 			remoteGlobalIDString = F4D91A9C1D02964E004BCEF2;
 			remoteInfo = "theOfficeKegWatch Extension";
 		};
-		F4D91AB11D02964E004BCEF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F41524AD1B2E0409006416B3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4D91A901D02964E004BCEF2;
-			remoteInfo = theOfficeKegWatch;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -356,7 +349,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F4D91AB21D02964E004BCEF2 /* PBXTargetDependency */,
 			);
 			name = theOfficeKeg;
 			productName = theOfficeKeg;
@@ -654,11 +646,6 @@
 			target = F4D91A9C1D02964E004BCEF2 /* theOfficeKegWatch Extension */;
 			targetProxy = F4D91A9F1D02964E004BCEF2 /* PBXContainerItemProxy */;
 		};
-		F4D91AB21D02964E004BCEF2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F4D91A901D02964E004BCEF2 /* theOfficeKegWatch */;
-			targetProxy = F4D91AB11D02964E004BCEF2 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -829,10 +816,10 @@
 		F41524E61B2E0409006416B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"ADDITIONAL_SDKS[arch=*]" = "Latest watchOS (watchOS 2.2)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = theOfficeKegTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vetsfirstchoice.theOfficeKegTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/theOfficeKeg.app/theOfficeKeg";
