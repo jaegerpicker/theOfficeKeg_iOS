@@ -829,6 +829,7 @@
 		F41524E61B2E0409006416B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ADDITIONAL_SDKS[arch=*]" = "Latest watchOS (watchOS 2.2)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = theOfficeKegTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
