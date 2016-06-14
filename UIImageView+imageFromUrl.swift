@@ -11,16 +11,16 @@ import Foundation
 
 
 extension UIImageView {
-    public func imageFromUrl(urlString: String) {
-        if let url = NSURL(string: urlString) {
-            let request = NSURLRequest(URL: url)
-            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-            let session = NSURLSession(configuration: config)
+    public func imageFromUrl(_ urlString: String) {
+        if let url = URL(string: urlString) {
+            let request = URLRequest(url: url)
+            let config = URLSessionConfiguration.default()
+            let session = URLSession(configuration: config)
             
-            let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
+            let task : URLSessionDataTask = session.dataTask(with: request, completionHandler: {(data, response, error) in
                 //print(response)
                 //print(error)
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
                     self.image = UIImage(data: data!)
                 })
                 self.layoutIfNeeded()

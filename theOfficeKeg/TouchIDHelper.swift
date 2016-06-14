@@ -15,12 +15,11 @@
 //
 
 import Foundation
-import PromiseKit
 import LocalAuthentication
 
-enum ViewError: ErrorType {
-	case TouchIDNoId
-	case TouchIDCancelled
+enum ViewError: ErrorProtocol {
+	case touchIDNoId
+	case touchIDCancelled
 }
 
 struct UserAuthKeyChain {
@@ -31,31 +30,26 @@ struct UserAuthKeyChain {
 private let keychainItemKey = "com.vetsfirstchoice.theOfficeKegAccount"
 
 
-func saveUserNameAndPassword(userAuth: UserAuthKeyChain) -> Promise<Void> {
-	return addTouchIDItem(userAuth.password, userName: userAuth.userName)
+func saveUserNameAndPassword(_ userAuth: UserAuthKeyChain) throws -> Void {
+	return try addTouchIDItem(userAuth.password, userName: userAuth.userName)
 }
 
-func retrieveUserAuth() -> Promise<UserAuthKeyChain> {
-	return getTouchIDItem()
+func retrieveUserAuth() throws -> UserAuthKeyChain {
+	return try getTouchIDItem()
 }
 
 private func touchIDAvailable() -> Bool {
 
 	let context = LAContext()
-	let error: NSErrorPointer = nil
-	return context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: error)
+	let error: NSErrorPointer? = nil
+	return context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: error!)
 }
 
 func showTouchID() -> Bool {
-	if #available(iOS 9.0, *) {
-		return touchIDAvailable() && !hideTouchIDPref()
-	} else {
-		// Fallback on earlier versions
-		return false
-	}
+	return touchIDAvailable() && !hideTouchIDPref()
 }
 
-func getTouchIDItem() -> Promise<UserAuthKeyChain> {
+func getTouchIDItem() throws -> UserAuthKeyChain  {
 
 	var query = Dictionary<String, AnyObject>()
 
@@ -72,21 +66,21 @@ func getTouchIDItem() -> Promise<UserAuthKeyChain> {
 	let errStatus = SecItemCopyMatching(query, &returnValue)
 
 	guard errStatus != errSecUserCanceled else {
-		return Promise(error:ViewError.TouchIDCancelled)
+		throw ViewError.touchIDCancelled
 	}
 
 	guard let data = returnValue as? NSDictionary,
 		let username = data[String(kSecAttrAccount)] as? String,
-		let passwordData = data[String(kSecValueData)] as? NSData,
-		let password = NSString(data:passwordData, encoding:NSUTF8StringEncoding) as? String else {
-			return Promise(error:ViewError.TouchIDNoId)
+		let passwordData = data[String(kSecValueData)] as? Data,
+		let password = NSString(data:passwordData, encoding:String.Encoding.utf8.rawValue) as? String else {
+			throw ViewError.touchIDNoId
 	}
 
-	return Promise(UserAuthKeyChain(userName:username, password: password))
+	return UserAuthKeyChain(userName:username, password: password)
 }
 
 
-func addTouchIDItem(value: String, userName: String) -> Promise<Void> {
+func addTouchIDItem(_ value: String, userName: String) throws -> Void {
 
 
 	// Should be the secret invalidated when passcode is removed? If not then use kSecAttrAccessibleWhenUnlocked
@@ -95,22 +89,17 @@ func addTouchIDItem(value: String, userName: String) -> Promise<Void> {
 	//let error: UnsafeMutablePointer<Unmanaged<CFError>?> = UnsafeMutablePointer<Unmanaged<CFError>?>()
 
 	var flags: SecAccessControlCreateFlags
-	if #available(iOS 9.0, *) {
-		flags = SecAccessControlCreateFlags.TouchIDAny
-	} else {
-		// Fallback on earlier versions
-		flags = SecAccessControlCreateFlags.UserPresence
-	}
+	flags = SecAccessControlCreateFlags.touchIDAny
 
 	guard let sacObject = SecAccessControlCreateWithFlags(kCFAllocatorDefault,
 	                                                      kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
 	                                                      flags, &error) else {
 															if let optionalError = error?.takeRetainedValue() as NSError? {
-																return Promise(error:optionalError)
+																throw optionalError
 															}
-															return Promise(error:NSError(domain: "No SAC Object", code: -1, userInfo: nil))
+															throw NSError(domain: "No SAC Object", code: -1, userInfo: nil)
 	}
-	let passWordData = value.dataUsingEncoding(NSUTF8StringEncoding)
+	let passWordData = value.data(using: String.Encoding.utf8)
 	var attributes = Dictionary<String, AnyObject>()
 	attributes[String(kSecClass)] = kSecClassGenericPassword
 	attributes[String(kSecAttrService)] = keychainItemKey
@@ -134,7 +123,7 @@ func addTouchIDItem(value: String, userName: String) -> Promise<Void> {
 	}
 	print("OSStatus \(status)")
 
-	return Promise()
+	return
 }
 
 func deleteTouchIDItem() -> Void {
@@ -150,10 +139,10 @@ func resetTouchID() -> Void {
 }
 
 func hideTouchIDPref() -> Bool {
-	return NSUserDefaults.standardUserDefaults().boolForKey("hideTouchID")
+	return UserDefaults.standard().bool(forKey: "hideTouchID")
 }
 
-func saveTouchIDPref(hideTouchId: Bool) {
-	NSUserDefaults.standardUserDefaults().setBool(hideTouchId, forKey: "hideTouchID")
+func saveTouchIDPref(_ hideTouchId: Bool) {
+	UserDefaults.standard().set(hideTouchId, forKey: "hideTouchID")
 }
 

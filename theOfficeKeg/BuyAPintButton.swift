@@ -17,7 +17,7 @@ class BuyAPintButton: UIButton {
         }
     }
     
-    internal var roundRectColor: UIColor = UIColor.blackColor() {
+    internal var roundRectColor: UIColor = UIColor.black() {
         didSet {
             self.setNeedsLayout()
         }
@@ -38,10 +38,10 @@ class BuyAPintButton: UIButton {
         let newRect = CGRect(x: frameRect.origin.x - 2,y: frameRect.origin.y - 2, width: frameRect.size.width + 3, height: frameRect.size.height + 3)
         let border : UIBezierPath = UIBezierPath(roundedRect: newRect, cornerRadius: roundRectCornerRadius)
         let borderLayer = CAShapeLayer()
-        borderLayer.path = border.CGPath
-        borderLayer.fillColor = UIColor.clearColor().CGColor
-        borderLayer.strokeColor = UIColor.whiteColor().CGColor
+        borderLayer.path = border.cgPath
+        borderLayer.fillColor = UIColor.clear().cgColor
+        borderLayer.strokeColor = UIColor.white().cgColor
         borderLayer.lineWidth = 6
-        self.layer.insertSublayer(borderLayer, atIndex: 0)
+        self.layer.insertSublayer(borderLayer, at: 0)
     }
 }

@@ -22,7 +22,7 @@ class PintPriceLabel: UILabel {
         }
     }
     
-    internal var roundRectColor: UIColor = UIColor.yellowColor() {
+    internal var roundRectColor: UIColor = UIColor.yellow() {
         didSet {
             self.setNeedsLayout()
         }
@@ -37,12 +37,12 @@ class PintPriceLabel: UILabel {
         
     private func layoutRoundedRect() {
         self.text = displayText
-        self.textAlignment = NSTextAlignment.Center
+        self.textAlignment = NSTextAlignment.center
         self.backgroundColor = roundRectColor
-        self.textColor = UIColor.blackColor()
+        self.textColor = UIColor.black()
         self.layer.cornerRadius = roundRectCornerRadius
         self.clipsToBounds = true
-        addConstraint(NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .GreaterThanOrEqual, toItem: self, attribute: .Height, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: self, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: self, attribute: .height, multiplier: 1, constant: 0))
     }
     
 }

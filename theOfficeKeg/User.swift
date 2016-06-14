@@ -11,7 +11,7 @@ import Foundation
 class User {
 
 	var balance: NSNumber?
-	var created: NSDate?
+	var created: Date?
 	var email: String?
 	var first_name: String?
 	var id: String?
@@ -24,16 +24,16 @@ class User {
 	var roles: NSSet?
 	var loggedIn: Bool?
 
-	func createFromNSDictionary(values: NSDictionary) {
+	func createFromNSDictionary(_ values: NSDictionary) {
 		self.id = values["_id"] as? String
 		self.first_name = values["first_name"] as? String
 		self.last_name = values["last_name"] as? String
 		self.password = values["password"] as? String
 		self.email = values["email"] as? String
-		let formatter = NSDateFormatter()
-		formatter.locale = NSLocale(localeIdentifier: "US_en")
+		let formatter = DateFormatter()
+		formatter.locale = Locale(localeIdentifier: "US_en")
 		formatter.dateFormat = "yyyy-mm-ddTHH:mm:ss"
-		let date = formatter.dateFromString((values["created"] as? String)!)
+		let date = formatter.date(from: (values["created"] as? String)!)
 		self.created = date
 		self.balance = values["balance"] as? NSNumber
 		self.scanner_uuid = values["scanner_uuid"] as? NSNumber

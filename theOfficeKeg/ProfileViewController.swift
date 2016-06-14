@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
 	@IBOutlet var Cancel: UIButton!
 
 
-	@IBAction func tapCancel(sender: UIButton) -> Void {
-		self.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
+	@IBAction func tapCancel(_ sender: UIButton) -> Void {
+		self.tabBarController?.dismiss(animated: true, completion: nil)
 	}
 }
